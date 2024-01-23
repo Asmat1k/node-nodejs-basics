@@ -7,7 +7,7 @@ const remove = async () => {
     const __dirname = path.dirname(__filename);
 
     try {
-        await fs.unlinkSync(`${__dirname}/files/filetoRemove.txt`);
+        fs.unlinkSync(`${__dirname}/files/filetoRemove.txt`);
     } catch (err) {
         throw new Error('FS operation failed');
     }

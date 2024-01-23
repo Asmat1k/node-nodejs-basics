@@ -7,8 +7,8 @@ const list = async () => {
     const __dirname = path.dirname(__filename);
 
     try {
-        await fs.existsSync(`${__dirname}/files`);
-        const filesList = await fs.readdirSync(`${__dirname}/files`);
+        fs.existsSync(`${__dirname}/files`);
+        const filesList = fs.readdirSync(`${__dirname}/files`);
         for (const file of filesList) {
             console.log(file);
         } 

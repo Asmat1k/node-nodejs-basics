@@ -8,11 +8,11 @@ const create = async () => {
     const __dirname = path.dirname(__filename);
 
     try  {
-        (await fs).openSync(`${__dirname}/files/fresh.txt`, 'r');
+        fs.openSync(`${__dirname}/files/fresh.txt`, 'r');
         throw Error('FS operation failed');
     } catch {
         try {
-            (await fs).writeFileSync(`src/fs/files/fresh.txt`, inner);
+            fs.writeFileSync(`src/fs/files/fresh.txt`, inner);
         } catch (error) {
              throw Error('writeFileSync failed: ', error);
         }
