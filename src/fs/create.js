@@ -9,12 +9,12 @@ const create = async () => {
 
     try  {
         (await fs).openSync(`${__dirname}/files/fresh.txt`, 'r');
-        console.log('FS operation failed');
+        throw Error('FS operation failed');
     } catch {
         try {
             (await fs).writeFileSync(`src/fs/files/fresh.txt`, inner);
         } catch (error) {
-            console.log('writeFileSync failed: ', error);
+             throw Error('writeFileSync failed: ', error);
         }
     }
 };
